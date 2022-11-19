@@ -9,7 +9,7 @@ namespace MVCRockersBatch.Controllers
 {
     public class DefaultController : Controller
     {
-        // GET: Default Got Next code
+        // GET: Default 
         
        [NonAction]
         public string GetData()
