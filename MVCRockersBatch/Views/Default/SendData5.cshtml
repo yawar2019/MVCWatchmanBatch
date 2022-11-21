@@ -1,0 +1,36 @@
+﻿@model MVCRockersBatch.Models.EmployeeDepartment
+@{
+    ViewBag.Title = "SendData5";
+}
+
+<h2>SendData5</h2>
+
+<table class="table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+    @foreach (var item in Model.emp)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+        </tr>
+    }
+</table>
+
+<table class="table-bordered table-condensed table-responsive table-striped">
+    <tr>
+        <th>DeptId</th>
+        <th>DeptName</th>
+    </tr>
+    @foreach (var item in Model.dept)
+    {
+        <tr>
+            <td>@item.DeptId</td>
+            <td>@item.DeptName</td>
+        </tr>
+    }
+</table>

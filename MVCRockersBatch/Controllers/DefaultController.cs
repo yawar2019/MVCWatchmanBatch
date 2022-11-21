@@ -79,6 +79,92 @@ namespace MVCRockersBatch.Controllers
             ViewBag.empInfo = listEmp;
             return View();
         }
+
+        public ActionResult SendData3()
+        {
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Namrata";
+            emp.EmpSalary = 27000;
+
+            
+            return View(emp);//object model=emp;
+        }
+
+        public ActionResult SendData4()
+        {
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Namrata";
+            emp.EmpSalary = 27000;
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Deepak";
+            emp1.EmpSalary = 29000;
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Bhanu";
+            emp2.EmpSalary = 37000;
+
+            listEmp.Add(emp);
+            listEmp.Add(emp1);
+            listEmp.Add(emp2);
+
+            
+            return View(listEmp);//model=listEmp
+        }
+
+        public ActionResult SendData5()
+        {
+
+            List<EmployeeModel> listEmp = new List<EmployeeModel>();
+
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Namrata";
+            emp.EmpSalary = 27000;
+
+            EmployeeModel emp1 = new EmployeeModel();
+            emp1.EmpId = 2;
+            emp1.EmpName = "Deepak";
+            emp1.EmpSalary = 29000;
+
+            EmployeeModel emp2 = new EmployeeModel();
+            emp2.EmpId = 3;
+            emp2.EmpName = "Bhanu";
+            emp2.EmpSalary = 37000;
+
+            listEmp.Add(emp);
+            listEmp.Add(emp1);
+            listEmp.Add(emp2);
+            //////////Department information
+
+
+            List<DepartmentModel> listdept = new List<DepartmentModel>();
+            DepartmentModel dept = new DepartmentModel();
+            dept.DeptId = 1;
+            dept.DeptName = "Time Pass Deparment";
+
+
+            DepartmentModel dept1 = new DepartmentModel();
+            dept1.DeptId = 2;
+            dept1.DeptName = "Money Waste Department";
+
+            listdept.Add(dept);
+            listdept.Add(dept1);
+
+            EmployeeDepartment empdept = new Models.EmployeeDepartment();
+            empdept.emp = listEmp;
+            empdept.dept = listdept;
+
+            return View(empdept);//model=listEmp
+        }
+
     }
 }
 
