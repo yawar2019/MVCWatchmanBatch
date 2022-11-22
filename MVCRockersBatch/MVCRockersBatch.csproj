@@ -165,6 +165,8 @@
     <Content Include="Views\Default\SendData3.cshtml" />
     <Content Include="Views\Default\SendData4.cshtml" />
     <Content Include="Views\Default\SendData5.cshtml" />
+    <Content Include="Views\Shared\_MyFirstPartialView.cshtml" />
+    <Content Include="Views\Default\SampleData.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

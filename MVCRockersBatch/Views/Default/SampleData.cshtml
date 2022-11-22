@@ -1,0 +1,34 @@
+﻿@model MVCRockersBatch.Models.EmployeeModel
+@{
+    ViewBag.Title = "SampleData";
+}
+
+<h2>SampleData</h2>
+
+@{
+
+    var s= Html.Partial("_MyFirstPartialView", Model);
+
+    if (1 == 2)
+    {
+        @s;
+    }
+}
+@{
+      Html.RenderPartial("_MyFirstPartialView", Model);
+ }
+
+
+
+
+
+
+
+
+
+@*Q1)how to call Partial View inside another View
+    a)partial method b)Render Partial
+
+    Ex:@Html.Partial()   @Html.RenderPartial()
+    
+    *@

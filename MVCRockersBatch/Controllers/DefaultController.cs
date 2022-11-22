@@ -119,7 +119,7 @@ namespace MVCRockersBatch.Controllers
             return View(listEmp);//model=listEmp
         }
 
-        public ActionResult SendData5()
+        public ViewResult SendData5()
         {
 
             List<EmployeeModel> listEmp = new List<EmployeeModel>();
@@ -164,6 +164,20 @@ namespace MVCRockersBatch.Controllers
 
             return View(empdept);//model=listEmp
         }
+
+       //ActonResult Classess 22/11/2022
+
+        public ViewResult SampleData()
+        {
+            EmployeeModel emp = new EmployeeModel();
+            emp.EmpId = 1;
+            emp.EmpName = "Namrata";
+            emp.EmpSalary = 27000;
+
+
+            return View(emp);
+        }
+
 
     }
 }
