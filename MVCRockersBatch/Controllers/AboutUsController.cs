@@ -9,7 +9,7 @@ namespace MVCRockersBatch.Controllers
     public class AboutUsController : Controller
     {
         // GET: AboutUs
-        
+        [HttpGet]
         public ActionResult Index()
         {
             return View();

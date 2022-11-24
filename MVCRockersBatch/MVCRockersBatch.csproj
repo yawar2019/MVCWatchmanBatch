@@ -167,6 +167,7 @@
     <Content Include="Views\Default\SendData5.cshtml" />
     <Content Include="Views\Shared\_MyFirstPartialView.cshtml" />
     <Content Include="Views\Default\SampleData.cshtml" />
+    <Content Include="Views\Default\ShowJsonDataInGrid.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
