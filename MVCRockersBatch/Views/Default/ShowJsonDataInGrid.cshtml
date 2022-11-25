@@ -8,9 +8,9 @@
 <table id="table-1" class="table table-bordered">
     <thead>
         <tr>
-            <th>EmpId</th>
-            <th>EmpName</th>
-            <th>EmpSalary</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Description</th>
         </tr>
     </thead>
 </table>
@@ -19,16 +19,16 @@
 <script src="~/scripts/jquery-1.10.2.min.js"></script>
 <script>
     $.ajax({
-        url: "http://localhost:50310/Default/GetJsonData",
+        url: "https://newsapi.org/v2/top-headlines?apiKey=9728cb7e8bca400b85ea8b193f2840af&q=cricket",
         dataType: "json",
         type: "GET",
         success:function(result)
         {
             debugger;
 
-            $.each(result, function (i,key) {
+            $.each(result.articles, function (i, key) {
                
-                $("#table-1 tr:last").after("<tr><td>" + key.EmpId + "</td><td>" + key.EmpName + "</td><td>" + key.EmpSalary + "</td></tr>");
+                $("#table-1 tr:last").after("<tr><td>" + key.author + "</td><td>" + key.content + "</td><td>" + key.description + "</td></tr>");
             })
         }
     })

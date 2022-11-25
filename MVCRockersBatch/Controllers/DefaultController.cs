@@ -221,6 +221,35 @@ namespace MVCRockersBatch.Controllers
             return View();
         }
 
+        public FileResult getFile()
+        {
+            return File("~/Web.config","text");
+        }
+
+        public FileResult getFile2(int? id)
+        {
+            return File("~/Web.config", "application/xml");
+        }
+
+        public FileResult getFile3()
+        {
+            return File("~/jungle.jpg", "image/jpeg", "jungleBook.jpg");
+        }
+        public RedirectResult GoToGoogle()
+        {
+            return Redirect("http://www.google.com");
+        }
+
+        public RedirectResult GoToGetFile2(int? id)
+        {
+            return Redirect("~/Default/getFile2?id="+1211);
+        }
+
+        public RedirectToRouteResult GotoGetFile3()
+        {
+            return RedirectToAction("GoToGetFile2","Default",new {id=1234});
+        }
+
     }
 }
 
