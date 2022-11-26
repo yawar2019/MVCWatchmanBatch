@@ -250,6 +250,41 @@ namespace MVCRockersBatch.Controllers
             return RedirectToAction("GoToGetFile2","Default",new {id=1234});
         }
 
+        public RedirectToRouteResult GetToDesitinationUsingRoute()
+        {
+            return RedirectToRoute("xyz");
+        }
+
+        public EmptyResult GetNothing()
+        {
+            return new EmptyResult();
+        }
+
+        public ContentResult GetContent(int? id)
+        {
+            if (id == 1)
+            {
+                return Content("Hello World");
+            }
+            else if(id==2)
+            {
+                return Content("<p style=color:red>Hello World</p>");
+            }
+            else
+            {
+                return Content("<script>alert('Hello World')</script>");
+            }
+        }
+
+        public string GetSomeEmpId(int id,string name)
+        {
+            return id.ToString()+","+name;
+        }
+        public string GetSomeEmpId2()//?id=1&name=pavan
+        {
+            return Request.QueryString["id"]+","+Request.QueryString["name"];
+        }
+
     }
 }
 
