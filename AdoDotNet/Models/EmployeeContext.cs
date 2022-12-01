@@ -33,5 +33,25 @@ namespace AdoDotNet.Models
             return listEmp;
 
         }
+
+        public bool SaveEmployee(EmployeeModel emp)
+        {
+
+            SqlCommand cmd = new SqlCommand("usp_SaveEmployee",con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpName",emp.EmpName);
+            cmd.Parameters.AddWithValue("@EmpSalary",emp.EmpSalary);
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
