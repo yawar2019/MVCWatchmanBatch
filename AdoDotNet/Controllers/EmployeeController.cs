@@ -35,5 +35,23 @@ namespace AdoDotNet.Controllers
             }
             return View();
         }
+        public ActionResult Edit(int? id)//it is called loading,HttpGet
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+
+            return View(emp);
+        }
+
+        [HttpPost]//Actionverb
+        public ActionResult Edit(EmployeeModel emp)//Called to save information
+        {
+           
+            bool i = db.UpdateEmployee(emp);
+            if (i)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
