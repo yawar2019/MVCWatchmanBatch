@@ -53,5 +53,42 @@ namespace AdoDotNet.Controllers
             }
             return View();
         }
+
+        public ActionResult Delete(int? id)//it is called loading,HttpGet
+        {
+            EmployeeModel emp = db.GetEmployeeById(id);
+            ViewData["Boy"] = "Welcome to User"+emp.EmpName;
+
+            return View(emp);
+        }
+        [ActionName("Delete")]
+        [HttpPost]
+        public ActionResult DeleteConfirmed(int? id)//it is called loading,HttpGet
+        {
+          
+            bool i = db.DeleteEmployee(id);
+
+            if (i)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult SetViewData()
+        {
+            ViewData["Boy"] = "Welcome to User Kanchan";
+            //ViewBag.Boy = "Welcome to User Kanchan";
+
+            return View();
+        }
+        public ActionResult GetViewData()
+        {
+           string result = ViewBag.Boy;
+
+            return Content(result);
+        }
+
+
     }
 }

@@ -98,5 +98,24 @@ namespace AdoDotNet.Models
                 return false;
             }
         }
+
+        public bool DeleteEmployee(int? id)
+        {
+
+            SqlCommand cmd = new SqlCommand("usp_deleteEmployeeById", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            con.Open();
+            cmd.Parameters.AddWithValue("@EmpId", id);
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            if (i > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
