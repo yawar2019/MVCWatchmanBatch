@@ -1,0 +1,58 @@
+﻿@model DatabaseFirstApproach.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpSalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpSalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeptID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeptID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employees1.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employees1.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee1.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee1.EmpName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

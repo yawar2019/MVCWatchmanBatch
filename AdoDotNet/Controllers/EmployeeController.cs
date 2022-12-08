@@ -79,13 +79,21 @@ namespace AdoDotNet.Controllers
         {
             ViewData["Boy"] = "Welcome to User Kanchan";
             //ViewBag.Boy = "Welcome to User Kanchan";
-
-            return View();
+            TempData["HelloWorld"] = "World is full of Cunning Peoples";
+            return RedirectToAction("GetViewData");
         }
         public ActionResult GetViewData()
         {
-           string result = ViewBag.Boy;
-
+            // string result = ViewBag.Boy;
+            string result = Convert.ToString(TempData["HelloWorld"]);
+            return RedirectToAction("GetViewData2");
+        }
+        public ActionResult GetViewData2()
+        {
+            // string result = ViewBag.Boy;
+            //string result = Convert.ToString(TempData["HelloWorld"]);
+            //TempData.Keep();
+            string result = TempData.Peek("HelloWorld").ToString();
             return Content(result);
         }
 

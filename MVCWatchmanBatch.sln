@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCRockersBatch", "MVCRocke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoDotNet", "AdoDotNet\AdoDotNet.csproj", "{2318DD0B-438F-4FE1-978D-5C9FEDE0E2CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirstApproach", "DatabaseFirstApproach\DatabaseFirstApproach.csproj", "{D0D2E70E-D004-4ADC-9D60-011746F6045A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2318DD0B-438F-4FE1-978D-5C9FEDE0E2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2318DD0B-438F-4FE1-978D-5C9FEDE0E2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2318DD0B-438F-4FE1-978D-5C9FEDE0E2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D2E70E-D004-4ADC-9D60-011746F6045A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D2E70E-D004-4ADC-9D60-011746F6045A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D2E70E-D004-4ADC-9D60-011746F6045A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D2E70E-D004-4ADC-9D60-011746F6045A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
