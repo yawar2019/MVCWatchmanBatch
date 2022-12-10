@@ -117,9 +117,14 @@
             <Parameter Name="EmpName" Mode="In" Type="String" />
             <Parameter Name="EmpSalary" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_employee" ReturnType="Collection(EmployeeModel.sp_employee_Result)" />
+          <FunctionImport Name="sp_employee" ReturnType="Collection(EmployeeModel.sp_employee_Result1)" />
         </EntityContainer>
         <ComplexType Name="sp_employee_Result">
+          <Property Type="Int32" Name="EmpId" Nullable="false" />
+          <Property Type="String" Name="EmpName" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="EmpSalary" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_employee_Result1">
           <Property Type="Int32" Name="EmpId" Nullable="false" />
           <Property Type="String" Name="EmpName" Nullable="true" MaxLength="500" />
           <Property Type="Int32" Name="EmpSalary" Nullable="true" />
@@ -164,7 +169,7 @@
           <FunctionImportMapping FunctionImportName="sp_CreateEmployee" FunctionName="EmployeeModel.Store.sp_CreateEmployee" />
           <FunctionImportMapping FunctionImportName="sp_employee" FunctionName="EmployeeModel.Store.sp_employee">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="EmployeeModel.sp_employee_Result">
+              <ComplexTypeMapping TypeName="EmployeeModel.sp_employee_Result1">
                 <ScalarProperty Name="EmpId" ColumnName="EmpId" />
                 <ScalarProperty Name="EmpName" ColumnName="EmpName" />
                 <ScalarProperty Name="EmpSalary" ColumnName="EmpSalary" />

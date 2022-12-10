@@ -80,7 +80,7 @@ namespace DatabaseApproach2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            employeeDetail employeeDetail = db.employeeDetails.Find(id);
+            employeeDetail employeeDetail = db.employeeDetails.Where(x=>x.EmpId==id).SingleOrDefault();
             if (employeeDetail == null)
             {
                 return HttpNotFound();
@@ -129,7 +129,25 @@ namespace DatabaseApproach2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult GetDataUsingStoreproc()
+        {
+            return View(db.sp_employee());
+        }
 
+        public ActionResult CreateEF()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateEF(string EmpName,int EmpSalary)
+        {
+            int result = db.sp_CreateEmployee(EmpName, EmpSalary);
+            if (result > 0)
+            {
+              return RedirectToAction("GetDataUsingStoreproc");
+            }
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

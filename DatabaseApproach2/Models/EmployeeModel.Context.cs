@@ -43,9 +43,9 @@ namespace DatabaseApproach2.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_CreateEmployee", empNameParameter, empSalaryParameter);
         }
     
-        public virtual ObjectResult<sp_employee_Result> sp_employee()
+        public virtual ObjectResult<sp_employee_Result1> sp_employee()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result>("sp_employee");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_employee_Result1>("sp_employee");
         }
     }
 }

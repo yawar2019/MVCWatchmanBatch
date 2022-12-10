@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DatabaseApproach2.Models.sp_employee_Result1>
+@{
+    ViewBag.Title = "GetDataUsingStoreproc";
+}
+
+<h2>GetDataUsingStoreproc</h2>
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>EmpSalary</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.EmpId</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+        </tr>
+
+    }
+</table>
+
+//A obj=new A();//correct
+obj.create();
+
+class A
+{
+int create()
+{
+//logic
+}
+}
+  B obj1=new A();
+Ia obj=new a();
+Ia obj=new B();
+obj.create();
+
+Interface IA
+{
+int create();
+}
