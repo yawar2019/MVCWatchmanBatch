@@ -13,6 +13,7 @@ namespace CodeFirstApproachExample.Models
         }
 
         public DbSet<EmployeeModel> EmployeeModels { get; set; }
+        
     }
 }
 
