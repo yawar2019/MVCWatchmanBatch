@@ -37,5 +37,49 @@ namespace DapperExample.Controllers
             }
             return View();
         }
+
+        public ActionResult Edit(int? id)
+        {
+            var param = new DynamicParameters();
+            param.Add("@empid", id);
+            var Employees = con.QuerySingle<EmployeeModel>("spr_getEmployeeDetailsbyId", param: param, commandType: CommandType.StoredProcedure);
+            return View(Employees);
+        }
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel employee)
+        {
+            var param = new DynamicParameters();
+            param.Add("@EmpId", employee.EmpId);
+            param.Add("@EmpName", employee.EmpName);
+            param.Add("@EmpSalary", employee.EmpSalary);
+            int result = con.Execute("spr_updateEmployeeDetails", param: param, commandType: CommandType.StoredProcedure);
+            if (result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            var param = new DynamicParameters();
+            param.Add("@empid", id);
+            var Employees = con.QuerySingle<EmployeeModel>("spr_getEmployeeDetailsbyId", param: param, commandType: CommandType.StoredProcedure);
+            return View(Employees);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            var param = new DynamicParameters();
+            param.Add("@EmpId", id);
+           
+            int result = con.Execute("usp_DeleteEmployeeById", param: param, commandType: CommandType.StoredProcedure);
+            if (result > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }

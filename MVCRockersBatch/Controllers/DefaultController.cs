@@ -285,6 +285,11 @@ namespace MVCRockersBatch.Controllers
             return Request.QueryString["id"]+","+Request.QueryString["name"];
         }
 
+        public ActionResult HtmlHelperExample()
+        {
+            return View();
+        }
+
     }
 }
 

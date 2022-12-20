@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -20,7 +21,7 @@
         <th>
             @Html.DisplayNameFor(model => model.EmpSalary)
         </th>
-        
+        <th>Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -34,8 +35,21 @@
         <td>
             @Html.DisplayFor(modelItem => item.EmpSalary)
         </td>
-        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmpId })|
+            @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+        </td>
     </tr>
 }
 
 </table>
+
+
+@section HeaderSection
+{
+    <ul style="color:white;">
+        <li>Home</li>
+        <li>AboutUs</li>
+        <li>ContactUs</li>
+    </ul>
+ }
