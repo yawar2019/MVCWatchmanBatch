@@ -5,10 +5,54 @@
 
 <h2>HtmlHelperExample</h2>
 
-<input type="text" name="name" value="" />
+<input type="text" name="name" value="" style="background-color:orangered;" class="form-control" onclick="fun()" />
+@*<input type="text" name="name" value="" />
+    <br />
+    @Html.TextBox("xxx")
+    @Html.EditorFor(x => x.EmpId)
+    @Html.EditorFor(x => x.EmpName)
+    @Html.EditorFor(x => x.EmpSalary)*@
+@*@Html.EditorFor(x => x.IsActive)
+*@
+@Html.EditorFor(x => x.IsActive)
+ 
+
+@Html.TextBox("FirstName", "James", new { style = "background-color:orangered;", @class = "form-control", onclick = "fun()" })
+@Html.Password("Pwd", "123")<br />
+Gender @Html.RadioButton("Gender", "Male")<span>Male</span>
+@Html.RadioButton("Gender", "FeMale",true)<span>FeMale</span>
+@Html.CheckBox("Agreement",true)<br />
+@Html.DropDownList("Places",
+    new List<SelectListItem>() {
+       new SelectListItem{Text="Home",Value="1"},
+       new SelectListItem{Text="Office",Value="2",Selected=true}
+    },"Select Place Where you Save"
+
+)
 <br />
-@Html.TextBox("xxx")
-@Html.TextBoxFor(jkdahksd=> jkdahksd.EmpName)
+@Html.DropDownList("favPlaces")
+<script>
+    function fun() {
+        alert("hello World");
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@Html.TextBoxFor(jkdahksd => jkdahksd.EmpName)*@
 
 
 @*

@@ -287,6 +287,9 @@ namespace MVCRockersBatch.Controllers
 
         public ActionResult HtmlHelperExample()
         {
+           MVCRockersBatch.Models.EmployeeEntities db = new EmployeeEntities();
+            var st=db.States.ToList();
+            ViewBag.favPlaces = new SelectList(st, "Id", "StateName");
             return View();
         }
 
