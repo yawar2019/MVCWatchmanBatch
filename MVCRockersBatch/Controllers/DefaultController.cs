@@ -289,10 +289,26 @@ namespace MVCRockersBatch.Controllers
         {
            MVCRockersBatch.Models.EmployeeEntities db = new EmployeeEntities();
             var st=db.States.ToList();
-            ViewBag.favPlaces = new SelectList(st, "Id", "StateName");
+            ViewBag.favPlaces = new SelectList(st, "Id", "StateName",3);
             return View();
         }
 
+
+        public ActionResult RegistrationForm()
+        {
+            MVCRockersBatch.Models.EmployeeEntities db = new EmployeeEntities();
+            var st = db.States.ToList();
+            ViewBag.favPlaces = new SelectList(st, "Id", "StateName", 3);
+            return View();
+        }
+        [HttpPost]
+        public ActionResult RegistrationForm(string EmpName,string Pwd,string Gender,string favPlaces,string Agreement)
+        {
+            MVCRockersBatch.Models.EmployeeEntities db = new EmployeeEntities();
+            var st = db.States.ToList();
+            ViewBag.favPlaces = new SelectList(st, "Id", "StateName", 3);
+            return View();
+        }
     }
 }
 

@@ -215,6 +215,7 @@
     <Content Include="Views\Default\SampleData.cshtml" />
     <Content Include="Views\Default\ShowJsonDataInGrid.cshtml" />
     <Content Include="Views\Default\HtmlHelperExample.cshtml" />
+    <Content Include="Views\Default\RegistrationForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

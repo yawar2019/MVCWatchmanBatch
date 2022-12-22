@@ -15,25 +15,39 @@
 @*@Html.EditorFor(x => x.IsActive)
 *@
 @Html.EditorFor(x => x.IsActive)
- 
+
 
 @Html.TextBox("FirstName", "James", new { style = "background-color:orangered;", @class = "form-control", onclick = "fun()" })
-@Html.Password("Pwd", "123")<br />
+@Html.Password("Pwd", "123")
+<br />
 Gender @Html.RadioButton("Gender", "Male")<span>Male</span>
-@Html.RadioButton("Gender", "FeMale",true)<span>FeMale</span>
-@Html.CheckBox("Agreement",true)<br />
+@Html.RadioButton("Gender", "FeMale", true)<span>FeMale</span>
+@Html.CheckBox("Agreement", true)
+<br />
 @Html.DropDownList("Places",
     new List<SelectListItem>() {
        new SelectListItem{Text="Home",Value="1"},
        new SelectListItem{Text="Office",Value="2",Selected=true}
-    },"Select Place Where you Save"
+    }, "Select Place Where you Save"
 
 )
 <br />
 @Html.DropDownList("favPlaces")
+@Html.DropDownList("StateNames", (IEnumerable<SelectListItem>)ViewBag.favPlaces)
+@Html.DropDownListFor(x=>x.StateName, (IEnumerable<SelectListItem>)ViewBag.favPlaces)
+
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+
 <script>
+
+    $('#favPlaces').on("change", function () {
+
+        alert($('#favPlaces option:selected').text());
+    })
+
     function fun() {
-        alert("hello World");
+        
     }
 </script>
 
