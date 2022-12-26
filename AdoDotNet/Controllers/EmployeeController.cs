@@ -97,6 +97,36 @@ namespace AdoDotNet.Controllers
             return Content(result);
         }
 
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ValidationExample(EmployeeModel employeeModel)
+        {
+            if (ModelState.IsValid)
+            {
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpPost]
+        public JsonResult GetEmailJson(string EmailId)
+        {
+            var _EmailId = EmailId;
+            if (_EmailId == "james@123.com")
+            {
+                return Json(false,JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(true,JsonRequestBehavior.AllowGet);
+
+            }
+        }
 
     }
 }

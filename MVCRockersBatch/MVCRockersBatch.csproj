@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controls\UserControl.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -189,6 +190,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterValidation.cs" />
     <Compile Include="Models\State.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -300,7 +300,7 @@ namespace MVCRockersBatch.Controllers
             var st = db.States.ToList();
             ViewBag.favPlaces = new SelectList(st, "Id", "StateName", 3);
             return View();
-        }
+        } 
         [HttpPost]
         public ActionResult RegistrationForm(string EmpName,string Pwd,string Gender,string favPlaces,string Agreement)
         {

@@ -2,56 +2,67 @@
 @{
     ViewBag.Title = "RegistrationForm";
 }
-
+@using MVCRockersBatch.Controls
 <h2>RegistrationForm</h2>
 
 @*@using (Html.BeginForm("About","About",FormMethod.Get,new {name="FormName" })) {
     }*@
 
-@using (Html.BeginForm()) { 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <label>EmpName</label>
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <label>EmpName</label>
+            </div>
+            <div class="col-md-8">
+                @Html.TextBox("EmpName")
+            </div>
         </div>
-        <div class="col-md-8">
-            @Html.TextBox("EmpName")
+        <div class="row">
+            <div class="col-md-4">
+                <label>Password</label>
+            </div>
+            <div class="col-md-8">
+                @Html.Password("Pwd")
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Gender</label>
+            </div>
+            <div class="col-md-8">
+                @Html.RadioButton("Gender", "Male", true)<span>Male</span>
+                @Html.RadioButton("Gender", "FeMale", true)<span>Male</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>State</label>
+            </div>
+            <div class="col-md-8">
+                @Html.DropDownList("favPlaces")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>State</label>
+            </div>
+            <div class="col-md-8">
+                @Html.CheckBox("Agreement")
+            </div>
+        </div>
+        <input type="submit" name="name" value="submit" class="btn btn-danger" />
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <label>Password</label>
-        </div>
-        <div class="col-md-8">
-            @Html.Password("Pwd")
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <label>Gender</label>
-        </div>
-        <div class="col-md-8">
-            @Html.RadioButton("Gender", "Male", true)<span>Male</span>
-            @Html.RadioButton("Gender", "FeMale", true)<span>Male</span>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <label>State</label>
-        </div>
-        <div class="col-md-8">
-            @Html.DropDownList("favPlaces")
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <label>State</label>
-        </div>
-        <div class="col-md-8">
-            @Html.CheckBox("Agreement")
-        </div>
-    </div>
-    <input type="submit" name="name" value="submit" class="btn btn-danger"/>
-</div>
 }
+@MVCRockersBatch.Controls.UserControl.MyLabel("Enter your Name Pls")
+@Html.createUrControl("text")
+<br />
+@Html.createUrControl("checkbox")
+<br />
+@Html.createUrControl("radio")
+<br />
+@Html.createUrControl("file")
+<br />
 
+<br />
