@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using AdoDotNet.Myfilters;
 namespace AdoDotNet.Controllers
 {
-    public class EmployeeController : Controller
+    public class EmployeeController : Controller 
     {
         // GET: Employee
         EmployeeContext db = new EmployeeContext();
+        //[CustomFilter]
         public ActionResult Index()
         {
+            //CustomFilter
             return View(db.GetAllEmployees());
         }
 
@@ -127,6 +129,22 @@ namespace AdoDotNet.Controllers
 
             }
         }
+
+        public ActionResult someMethod()
+        {
+
+            ViewBag.Talent = "Patric Singer";
+
+            return View();
+        }
+
+        public ActionResult AccessWcfData()
+        {
+            ServiceReference1.Service1Client obj = new ServiceReference1.Service1Client("NetTcpBinding_IService1");
+            
+            return Content(obj.add(10, 20).ToString());
+        }
+        
 
     }
 }
