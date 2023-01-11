@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebApi2.Models;
 
 namespace WebApi2.Controllers
 {
@@ -11,11 +12,19 @@ namespace WebApi2.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        [HttpGet]
+        public IEnumerable<string> ghgjjh()
         {
             return new string[] { "value1", "value2" };
         }
-
+   
+        [HttpGet]
+        //[Route("api/values/jakas")]
+        //[Route("api/values/jakas2")]
+        public IEnumerable<string> jjklkl()
+        {
+            return new string[] { "value1", "value2" };
+        }
         // GET api/values/5
         public string Get(int id)
         {
@@ -38,6 +47,12 @@ namespace WebApi2.Controllers
         public string Delete(int id)
         {
             return "Delete Call";
+        }
+        [Route("api/GetAllEmployees")]
+        public IHttpActionResult GetAllEmployee()
+        {
+            EmployeeContext db = new Models.EmployeeContext();
+            return Ok(db.GetEmployeeData());
         }
     }
 }

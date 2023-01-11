@@ -144,7 +144,12 @@ namespace AdoDotNet.Controllers
             
             return Content(obj.add(10, 20).ToString());
         }
-        
+
+
+        public ActionResult GetApiData()
+        {
+            return View();
+        }
 
     }
 }
